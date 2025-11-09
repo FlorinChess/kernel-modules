@@ -11,6 +11,8 @@
 
 void print_username(char* username) {
   printk(username);
+
+  username = NULL;
 }
 
 static int __init init_username_reader(void)

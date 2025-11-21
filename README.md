@@ -4,7 +4,7 @@ This repository contains a set of Linux kernel modules of different levels of co
 
 ## Recommended environment for testing
 
-Any x86-64 Linux distribution. For testing the taint tracking functionality, the Clang compiler should be built from source with the taint analysis compiler pass. The source code for the prototype, as well as more information on how to build LLVM with the additional compiler pass, can be found [here](https://github.com/FlorinChess/llvm-project).
+Any x86-64 Linux distribution. For testing the taint tracking functionality, the Clang compiler should be built from source with the taint analysis compiler pass. The source code for the prototype, as well as more information on how to build LLVM with the additional compiler pass, can be found [here](https://github.com/FlorinChess/llvm-project/blob/main/README.md).
 
 ## Building the modules
 

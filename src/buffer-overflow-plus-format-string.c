@@ -97,7 +97,7 @@ static void __exit memop_exit(void)
 module_init(memop_init);
 module_exit(memop_exit);
 
-MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Florin Zamfir");
-MODULE_DESCRIPTION("Buffer overflow + string format vulnerability.");
+MODULE_DESCRIPTION("Buffer overflow + string format vulnerability demo.");
+MODULE_LICENSE("GPL");
 MODULE_VERSION("1.0");

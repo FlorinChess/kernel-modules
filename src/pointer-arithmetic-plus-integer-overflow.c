@@ -118,6 +118,6 @@ module_init(t2_init);
 module_exit(t2_exit);
 
 MODULE_AUTHOR("Florin Zamfir");
-MODULE_DESCRIPTION("Faulty pointer arithmetic vulenrability demo 2.");
+MODULE_DESCRIPTION("Faulty pointer arithmetic vulenrability demo.");
 MODULE_LICENSE("GPL");
 MODULE_VERSION("1.0");

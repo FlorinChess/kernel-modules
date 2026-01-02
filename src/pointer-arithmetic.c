@@ -169,6 +169,6 @@ module_init(taint_init);
 module_exit(taint_exit);
 
 MODULE_AUTHOR("Florin Zamfir");
-MODULE_DESCRIPTION("Faulty pointer arithmetic vulenrability demo 1.");
+MODULE_DESCRIPTION("Faulty pointer arithmetic vulenrability demo.");
 MODULE_LICENSE("GPL");
 MODULE_VERSION("1.0");

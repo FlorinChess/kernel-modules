@@ -1,9 +1,9 @@
-#include <linux/module.h>   /* Needed by all modules  */
-#include <linux/kernel.h>   /* Needed for KERN_INFO   */
-#include <linux/init.h>     /* Needed for the macros  */
-#include <linux/list.h>     /* Needed for linked list */
-#include <linux/types.h>    /* Needed for list macros */
-#include <linux/slab.h>     /* Needed for Kernel */
+#include <linux/module.h>
+#include <linux/kernel.h>
+#include <linux/init.h>
+#include <linux/list.h>
+#include <linux/types.h>
+#include <linux/slab.h>
 #include <linux/uaccess.h>
 
 #define KEY_LENGTH 19
@@ -21,9 +21,11 @@ void decrypt(char* ciphertext, long key, long salt) {
   char plaintext[CIPHERTEXT_LENGTH];
   
   for(int i = 0; i < CIPHERTEXT_LENGTH; i++) {
-
+    long transform = key + salt; 
+        
+    plaintext[i] = ciphertext[i] ^ (char)(transform & 0xFF);
   }
-
+  plaintext[CIPHERTEXT_LENGTH - 1] = '\0';
   printk(KERN_INFO "Plaintext: %s\n", plaintext);
 }
 

@@ -6,6 +6,7 @@
 #include <linux/slab.h>
 #include <linux/uaccess.h>
 #include <linux/mutex.h>
+#include <linux/pci.h>
 
 #define DEVICE_BASENAME "userdata"
 #define KERNEL_BUF_SIZE 128    /* kernel-local buffer filled with pattern */
@@ -137,13 +138,13 @@ out:
 static int userdata_dev_open(struct inode *inode, struct file *file)
 {
     /* allow single-open semantics with the mutex in write/read */
-    pr_debug("userdata: device opened\n");
+    pr_info("userdata: device opened\n");
     return 0;
 }
 
 static int userdata_dev_release(struct inode *inode, struct file *file)
 {
-    pr_debug("userdata: device closed\n");
+    pr_info("userdata: device closed\n");
     return 0;
 }
 

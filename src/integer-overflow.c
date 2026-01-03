@@ -22,7 +22,8 @@ void decrypt(char* ciphertext, long key, long salt) {
   
   for(int i = 0; i < CIPHERTEXT_LENGTH; i++) {
     long transform = key + salt; 
-        
+    
+    // Possible integer overflow
     plaintext[i] = ciphertext[i] ^ (char)(transform & 0xFF);
   }
   plaintext[CIPHERTEXT_LENGTH - 1] = '\0';
@@ -31,8 +32,8 @@ void decrypt(char* ciphertext, long key, long salt) {
   long important_buffer_size = 0;
   kstrtol(plaintext, CIPHERTEXT_LENGTH, &important_buffer_size);
 
-  //!
-  long important_buffer = kmalloc(important_buffer_size, GFP_KERNEL);
+  // Exploitation potential
+  char* important_buffer = kmalloc(important_buffer_size, GFP_KERNEL);
 }
 
 static int __init init_decryptor(void)

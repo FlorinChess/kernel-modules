@@ -27,6 +27,12 @@ void decrypt(char* ciphertext, long key, long salt) {
   }
   plaintext[CIPHERTEXT_LENGTH - 1] = '\0';
   printk(KERN_INFO "Plaintext: %s\n", plaintext);
+
+  long important_buffer_size = 0;
+  kstrtol(plaintext, CIPHERTEXT_LENGTH, &important_buffer_size);
+
+  //!
+  long important_buffer = kmalloc(important_buffer_size, GFP_KERNEL);
 }
 
 static int __init init_decryptor(void)
